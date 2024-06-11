@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loaner Computer</title>
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- BOOTSTRAP LINK -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- HEADER START -->
+    <div class = "heading">
+      <center><h4 class = "head_text">The Official CSH Tech Hub!</h4></center>
+    </div>
+    <!-- HEADER END -->
+
+    <!-- NAV START -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="nav_img" href="compscihigh.org">
+          <img src = "/images/csh.png"  alt="Bootstrap" width="250" height="22" class="mx-2">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/loan">Computers</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/loanerform">Form</a></li>
+                <li><a class="dropdown-item" href="/termsofservice">Terms of Service</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- NAV END -->
+
+    
+    <!-- WEB BODY START -->
+    <br>
+    <br>
+    <center><h1 class = "mainH">Loaner Computers</h1></center>
+
+      <!-- BOOTSTRAP CARDS START -->
+      <div class="card mb-3" style="max-width: 1000px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/images/chromebook.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">CSH Chromebook</h5>
+              <p class="card-text">There are a certain amount of these laptops that are available in the main office that students can borrow. Submit a form to borrow a loaner.</p>
+              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- BOOTSTRAP CARDS END -->
+    <!-- WEB BODY END -->
+    
+
+    <!-- LOANER DATABASE DISPLAY -->
+      <!-- This is where we display the database of all the loaner computers via postman -->
+       <% for(let x = 0; x < loaner.length; x++){ %>
+          <div class="card" style="width: 18rem;">
+            <img src="/images/chrome3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Loaner #<%= loaner[x].number %></h5>
+              <p class="card-text"><%= loaner[x].item %></p>
+              <p class="card-text"><%= loaner[x].loanee %></p>
+              
+              <a href="/loanerform" class="btn btn-primary">Loan Here</a>
+            </div>
+          </div>
+       <% } %>
+    <!-- LOANER DATABASE DISPLAY -->
+    <!-- FOOTER START -->
+    
+    <!-- FOOTER END -->
+
+    
+  <!-- JS LINK  -->
+  <script src="index.js"></script>
+  <script src= "script.js"></script>
+    
+  <!-- BOOTSTRAP LINK -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<!-- This page is where the database of all CSH chromebook loaners are displayed -->
